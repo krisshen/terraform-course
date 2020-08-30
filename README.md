@@ -51,8 +51,9 @@
 <details>
   <summary>terraform show</summary>
   
-  1. Display plan content, e.g. terraform show result.plan
-  2. Display all states, e.g. terraform show
+  1. terraform show result.plan - display plan content, e.g. 
+  2. terraform show - display all states
+  3. terraform show -json - display all states info in json format
 </details>
 
 <details>
@@ -63,5 +64,4 @@
   
   - terraform state list - list all terraform resources
   - terraform state show RESOURCE_NAME - show one resource state
-  
 </details>
