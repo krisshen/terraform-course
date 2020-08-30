@@ -248,6 +248,7 @@
    - versioning
    - be carefully with using providers in modules
    - see registry.terraform.io for more modules in community
+   - after import module, need to run "terraform init" to download module (if it's from remote)
  </details>
 
  ## References
