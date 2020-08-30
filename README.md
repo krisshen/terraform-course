@@ -237,6 +237,19 @@
     }
 </details>
  
+ ### Modules
+ 
+ <details>
+   <summary>Details</summary>
+   
+   - [document](https://www.terraform.io/docs/configuration/modules.html)
+   - a standard module contains main.tf, variables.tf, outputs.tf and README.md
+   - remote modules
+   - versioning
+   - be carefully with using providers in modules
+   - see registry.terraform.io for more modules in community
+ </details>
+
  ## References
  
 - [Terraform Best Practices](https://www.terraform-best-practices.com/)
