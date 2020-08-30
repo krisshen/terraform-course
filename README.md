@@ -78,3 +78,33 @@
   1. generate a visual representation in DOT format which can be used by GraphViz to generate charts.
   2. copy paste output into an online editor to check chart, e.g. [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)
 </details>
+
+### Terraform Resources
+
+- Building blocks of Terraform code
+- Define the "what" of infrastructure
+- Different settings for every provider
+
+#### Samples
+
+<details>
+  <summary>provider</summary>
+  
+  ```
+    provider "aws" {
+      profile = "default"
+      region = "ap-southeast-2"
+    }
+  ```
+</details>
+
+<details>
+  <summary>resource</summary>
+  
+  ```
+    resource "aws_s3_bucket" "tf_course" {
+      bucket = "tf-course-20200830"
+      acl    = "private"
+    }
+  ```
+</details>
