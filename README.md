@@ -21,8 +21,11 @@
   4. Setup provider "aws" in first_code.tf
 </details>
 
-### Terraform Commands
+### Commands
 
+<details>
+  <summary>Details</summary>
+  
 <details>
   <summary>terraform init</summary>
   
@@ -79,7 +82,9 @@
   2. copy paste output into an online editor to check chart, e.g. [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)
 </details>
 
-### Terraform Resources
+</details>
+
+### Resources
 
 - Building blocks of Terraform code
 - Define the "what" of infrastructure
@@ -108,3 +113,5 @@
     }
   ```
 </details>
+
+### Basic Resource Types
