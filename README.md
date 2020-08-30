@@ -76,7 +76,7 @@
 </details>
 
 <details>
-  <summary>terraform graph</summary>
+  <summary>terraform graph - view infrastructure in a graph</summary>
   
   1. generate a visual representation in DOT format which can be used by GraphViz to generate charts.
   2. copy paste output into an online editor to check chart, e.g. [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)
@@ -119,12 +119,11 @@
 - [document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
 
 <details>
-  <summary>Details</summary>
+  <summary>AWS Samples</summary>
   
   <details>
     <summary>aws_s3_bucket</summary>
     
-    ```
     resource "aws_s3_bucket" "terraform_resource_name" {
       bucket = "s3-bucket-unique-name"
       acl    = "private"
@@ -138,19 +137,16 @@
             error_document = "error.html"
       }
     }
-    ```
   </details>
   
   <details>
     <summary>aws_default_vpc</summary>
       
-      ```
       resource "aws_default_vpc" "default" {
         tags = {
           Name = "Default VPC"
         }
       }
-      ```
   </details>
   
   <details>
@@ -168,5 +164,26 @@
   </details>
 </details>
 
+### Style
 
+<details>
+  <summary>Details</summary>
+  
+  - Indent two spaces
+  - Single meta-arguments first
+  - Block meta-arguments last
+  - Blank lines for clarity
+  - Group single arguments
+  - Think about readability
+  
+</details>
 
+ ### Using Default VPC
+ 
+```
+  resource "aws_default_vpc" "default" {}
+```
+ 
+ ## References
+ 
+- [Terraform Best Practices](https://www.terraform-best-practices.com/)
