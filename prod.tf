@@ -1,3 +1,28 @@
+variable "whitelist" {
+  type = list(string)
+}
+variable "web_image_id" {
+  type = string
+}
+variable "web_instance_type" {
+  type = string
+}
+variable "web_max_size" {
+  type = number
+}
+variable "web_min_size" {
+  type = number
+}
+variable "web_desired_capacity" {
+  type = number
+}
+//whitelist = ["0.0.0.0/0"]
+//web_image_id = "ami-038630edbff4d358e"
+//web_instance_type = "t2.micro"
+//web_max_size = 2
+//web_min_size = 2
+//web_desired_capacity = 2
+
 provider "aws" {
   profile = "default"
   region = "ap-southeast-2"
@@ -36,19 +61,19 @@ resource "aws_security_group" "prod_web" {
     from_port = 80
     protocol = "tcp"
     to_port = 80
-    cidr_blocks = ["0.0.0.0/0"] // allows everything in
+    cidr_blocks = var.whitelist // allows everything in
   }
   ingress {
     from_port = 443
     protocol = "tcp"
     to_port = 443
-    cidr_blocks = ["0.0.0.0/0"] // allows everything in
+    cidr_blocks = var.whitelist // allows everything in
   }
   egress {
     from_port = 0
     protocol = "-1" // all
     to_port = 0
-    cidr_blocks = ["0.0.0.0/0"]
+    cidr_blocks = var.whitelist
   }
 
   tags = {
@@ -101,8 +126,8 @@ resource "aws_elb" "prod_web" {
 
 resource "aws_launch_template" "prod_web" {
   name_prefix = "prod-web"
-  image_id = "ami-038630edbff4d358e"
-  instance_type = "t2.nano"
+  image_id = var.web_image_id
+  instance_type = var.web_instance_type
   vpc_security_group_ids = [aws_security_group.prod_web.id]
   tags = {
     "Terraform": "true"
@@ -112,8 +137,9 @@ resource "aws_launch_template" "prod_web" {
 resource "aws_autoscaling_group" "prod_web" {
 //  availability_zones = ["ap-southeast-2a", "ap-southeast-2b"]
   vpc_zone_identifier = [aws_default_subnet.default_az1.id, aws_default_subnet.default_az2.id]
-  max_size = 2
-  min_size = 2
+  max_size = var.web_max_size
+  min_size = var.web_min_size
+  desired_capacity = var.web_desired_capacity
 
   launch_template {
     id = aws_launch_template.prod_web.id
