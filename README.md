@@ -21,6 +21,11 @@
   4. Setup provider "aws" in first_code.tf
 </details>
 
+### Cleanup
+
+    terraform plan -destroy -out=destroy.plan
+    terraform apply destroy.plan
+    
 ### Commands
 
 <details>
@@ -54,7 +59,7 @@
   1. Check infrastructure state, compare, show results and resource actions if needed
   2. With -destroy option, it will list down what will be destroyed
   3. With -out option, the plan result will be stored in a binary file afterward,
-  e.g. terraform -destroy -out=result.plan
+  e.g. terraform plan -destroy -out=destroy.plan
 </details>
 
 <details>
