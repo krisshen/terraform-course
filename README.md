@@ -51,9 +51,9 @@
 <details>
   <summary>terraform show</summary>
   
-  1. terraform show result.plan - display plan content, e.g. 
-  2. terraform show - display all states
-  3. terraform show -json - display all states info in json format
+  - terraform show result.plan - display plan content 
+  - terraform show - display all states
+  - terraform show -json - display all states info in json format
 </details>
 
 <details>
@@ -64,4 +64,11 @@
   
   - terraform state list - list all terraform resources
   - terraform state show RESOURCE_NAME - show one resource state
+</details>
+
+<details>
+  <summary>terraform graph</summary>
+  
+  1. generate a visual representation in DOT format which can be used by GraphViz to generate charts.
+  2. copy paste output into an online editor to check chart, e.g. [GraphvizOnline](https://dreampuf.github.io/GraphvizOnline)
 </details>
