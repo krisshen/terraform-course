@@ -21,7 +21,7 @@
   4. Setup provider "aws" in first_code.tf
 </details>
 
-### Cleanup
+### Cleanup Provisioned AWS Resources
 
     terraform plan -destroy -out=destroy.plan
     terraform apply destroy.plan
