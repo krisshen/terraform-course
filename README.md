@@ -188,6 +188,54 @@
 ```
   resource "aws_default_vpc" "default" {}
 ```
+
+### Variables And Data Sources
+
+- [document](https://www.terraform.io/docs/configuration/variables.html)
+
+<details>
+  <summary>Variables Sample</summary>
+  
+    variable "image_id" {
+      type = string
+    }
+    
+    variable "availability_zone_names" {
+      type    = list(string)
+      default = ["us-west-1a"]
+    }
+</details>
+
+- [document](https://www.terraform.io/docs/configuration/data-sources.html)
+
+<details>
+  <summary>Data Sources Sample</summary>
+  
+    data "aws_ami" "example" {
+      most_recent = true
+    
+      owners = ["self"]
+      tags = {
+        Name   = "app-server"
+        Tested = "true"
+      }
+    }
+    
+    // Dynamic Data
+    data "aws_ami" "web" {
+      filter {
+        name   = "state"
+        values = ["available"]
+      }
+    
+      filter {
+        name   = "tag:Component"
+        values = ["web"]
+      }
+    
+      most_recent = true
+    }
+</details>
  
  ## References
  
