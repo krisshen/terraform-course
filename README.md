@@ -6,6 +6,10 @@
 
 ## Learning Notes
 
+### What is Terraform
+
+[Terraform](https://github.com/hashicorp/terraform) is a CLI tool for IaC
+
 ### Setup
 
 <details>
