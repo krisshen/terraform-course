@@ -39,3 +39,29 @@
   3. Execution sample: "Apply complete! Resources: 1 added, 0 changed, 0 destroyed."
 </details>
 
+<details>
+  <summary>terraform plan</summary>
+  
+  1. Check infrastructure state, compare, show results and resource actions if needed
+  2. With -destroy option, it will list down what will be destroyed
+  3. With -out option, the plan result will be stored in a binary file afterward,
+  e.g. terraform -destroy -out=result.plan
+</details>
+
+<details>
+  <summary>terraform show</summary>
+  
+  1. Display plan content, e.g. terraform show result.plan
+  2. Display all states, e.g. terraform show
+</details>
+
+<details>
+  <summary>terraform state</summary>
+  
+  1. for local storage (in-memory), it's a local terraform.tfstate file (in json format)
+  2. remote storage - for team work and version control maybe
+  
+  - terraform state list - list all terraform resources
+  - terraform state show RESOURCE_NAME - show one resource state
+  
+</details>
