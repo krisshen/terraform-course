@@ -114,4 +114,59 @@
   ```
 </details>
 
-### Basic Resource Types
+### Basic Resource Types (AWS Samples)
+
+- [document](https://registry.terraform.io/providers/hashicorp/aws/latest/docs)
+
+<details>
+  <summary>Details</summary>
+  
+  <details>
+    <summary>aws_s3_bucket</summary>
+    
+    ```
+    resource "aws_s3_bucket" "terraform_resource_name" {
+      bucket = "s3-bucket-unique-name"
+      acl    = "private"
+      tags = {
+        "Terraform" : "true"
+      }
+      policy = "${file("policy.json")}"
+      
+      website {
+            index_document = "index.html"
+            error_document = "error.html"
+      }
+    }
+    ```
+  </details>
+  
+  <details>
+    <summary>aws_default_vpc</summary>
+      
+      ```
+      resource "aws_default_vpc" "default" {
+        tags = {
+          Name = "Default VPC"
+        }
+      }
+      ```
+  </details>
+  
+  <details>
+    <summary>aws_security_group</summary>
+    
+    ...
+    
+  </details>
+  
+  <details>
+    <summary>aws_instance</summary>
+    
+    ...
+    
+  </details>
+</details>
+
+
+
